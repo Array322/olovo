@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLOVO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body class="order">
+    <div class="order-title-with-closing">
+        <h1>
+            Заказ:
+        </h1>
+        <a href="./index.html"><img class="order-title-with-closing__close" src="./images/order/closing.png"
+                alt="closing"></a>
+
+    </div>
+    <div class="order-information">
+        <img src="./images/order/order.jpg" alt="order">
+        <div class="order-information-name">
+            <h2 class="order-information-name__accent">
+                Кулон с полевой геранью
+            </h2>
+            <span>
+                2,5 х 4 см
+            </span>
+            <span>
+                цепочка 50 см
+            </span>
+        </div>
+        <span class="order-information__cost" data-price="650">
+            650 Р.
+        </span>
+        <select name="select" id="select">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <img class="order-information__close" src="./images/order/closing-order.png" alt="Close order">
+    </div>
+    <p class="order-information-cost">Общая стоимость: 650 Р.</p>
+    <script>
+        // Получаем элементы со страницы
+        const select = document.querySelector("#select");
+        const totalCostElement = document.querySelector(".order-information-cost");
+
+        // Устанавливаем начальную цену и количество
+        const price = 650;
+        let quantity = parseInt(select.value);
+
+        // Вычисляем общую стоимость и выводим на страницу
+        let totalCost = price * quantity;
+        totalCostElement.textContent = `Общая стоимость: ${totalCost} Р.`;
+
+        // Добавляем обработчик события "change" на select элемент
+        select.addEventListener("change", (event) => {
+            // Получаем новое значение количества
+            quantity = parseInt(event.target.value);
+
+            // Вычисляем общую стоимость и выводим на страницу
+            totalCost = price * quantity;
+            totalCostElement.textContent = `Общая стоимость: ${totalCost} Р.`;
+        });
+    </script>
+    <form action="#" method="post" class="questionnaire">
+        <input class="questionnaire__container" type="text" name="name" placeholder="Ваше имя" required="">
+        <div class="questionnaire__tel">
+            <input class="questionnaire__container tel" id="phone" type="tel" name="tel" placeholder="(999)999-99-99"
+                required="">
+            <label for="phone" class="static-value">+7</label>
+        </div>
+        <input class="questionnaire__container" type="email" placeholder="Ваш Email" required="">
+        <div class="order-radio">
+            <label>
+                <input type="radio" name="order" value="order" class="real-radio" required="">
+                <span class="custom-radio"></span>
+                <span class="radio-text">Доставка Яндекс курьером по г.Йошкар - Оле, Медведево, Руэм</span>
+                <div class="order-description">
+                    <input class="questionnaire__container" type="text" name="adress" placeholder="Адрес доставки">
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="order" value="order" class="real-radio" required="">
+                <span class="custom-radio"></span>
+                <span class="radio-text">СДЭК по России <span class="radio-text__accent">Стоимость доставки может
+                        меняться от веса изделия.</span></span>
+                <div class="order-description">
+                    <input class="questionnaire__container" type="text" id="optionalField" name="adress"
+                        placeholder="Адрес доставки">
+                </div>
+            </label>
+        </div>
+        <button class="questionnaire__button" data-popup="auth">Оформить заказ</button>
+    </form>
+    <!-- popup -->
+    <div class="popup">
+        <div class="popup__overlay"></div>
+        <div class="popup__container">
+            <div class="popup__content"></div>
+            <button class="popup__close"><img src="./images/order/popup-closing.png" alt="closing"></button>
+        </div>
+    </div>
+    <p class="paying">
+        Оплата принимается переводом на карту
+        или через Систему быстрых платежей (СБП)
+    </p>
+    <script type="text/template" id="auth">
+            <div>
+                <img src="./images/order/popup-decoration.png" alt="Decoration branch">
+                <p class="popup__text">Спасибо, ваша заявка принята. <br>
+                    Я свяжусь с вами в ближайшее время</p>
+            </div>
+        </script>
+
+    <script>
+        $('input[type=radio]').change(function () {
+            var thisDescription = $(this).parent().find('.order-description');
+            thisDescription.slideDown();
+            $('.order-description').not(thisDescription).slideUp();
+        });
+    </script>
+    <script src="./popup.js"></script>
+</body>
+
+</html>

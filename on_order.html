@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Под заказ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <main class="on-order-padding">
+        <div class="arrow-1">
+            <div></div>
+            <a href="./index.html" class="shop-links__link">На главную</a>
+        </div>
+        <div>
+            <h1 class="on-order__title">
+                Под заказ
+                <img class="on-order__title-left-image" src="./images/on_order/left.png" alt="decoration">
+                <img class="on-order__title-right-image" src="./images/on_order/right.png" alt="decoration">
+            </h1>
+
+        </div>
+        <p class="on-order-description">
+            Если вы хотите, чтобы я создала индивидуальный дизайн,
+            оставьте свои данные, и я обязательно свяжусь с вами. Или вы
+            можете позвонить самостоятельно.
+        </p>
+        <div class="on-order-border"></div>
+
+        <div class="order-contacts">
+            <img src="./images/on_order/on-order-example.jpg" alt="Example">
+            <div>
+                <form action="#" method="post" class="questionnaire">
+                    <input class="questionnaire__container" type="text" name="name" placeholder="Ваше имя" required="">
+                    <div class="questionnaire__tel">
+                        <input class="questionnaire__container tel" id="phone" type="tel" name="tel"
+                            placeholder="(999)999-99-99" required="">
+                        <label for="phone" class="static-value">+7</label>
+                    </div>
+                    <div class="order-radio on-order-radio">
+                        <h2 class="contact-title">
+                            Способ связи
+                        </h2>
+                        <label>
+                            <input type="radio" name="order" value="order" class="real-radio">
+                            <span class="custom-radio"></span>
+                            <span class="radio-order-text">Whatsapp</span>
+                           
+                        </label>
+
+                        <label>
+                            <input type="radio" name="order" value="order" class="real-radio">
+                            <span class="custom-radio"></span>
+                            <span class="radio-order-text">Telegram</span>
+                           
+                        </label>
+                        <h2 class="contact-title">
+                            Что вас интересует?
+                        </h2>
+                        <label>
+                            <input type="radio" name="order" value="order" class="real-radio">
+                            <span class="custom-radio"></span>
+                            <span class="radio-order-text">Рамка с гербарием</span>
+                            
+                        </label>
+
+                        <label>
+                            <input type="radio" name="order" value="order" class="real-radio">
+                            <span class="custom-radio"></span>
+                            <span class="radio-order-text">Украшение из витражного стекла</span>
+                            
+                        </label>
+
+                        <label>
+                            <input type="radio" name="order" value="order" class="real-radio">
+                            <span class="custom-radio"></span>
+                            <span class="radio-order-text">Украшение с гербарием</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="order" value="order" class="real-radio">
+                            <span class="custom-radio"></span>
+                            <span class="radio-order-text">Шкатулка</span>
+
+                        </label>
+                        <img class="on-order-radio__image" src="./images/on_order/decoration.png" alt="decoration">
+                    </div>
+                    <button class="questionnaire__button button-accent" data-popup="auth">Оформить заказ</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- popup -->
+    <div class="popup">
+        <div class="popup__overlay"></div>
+        <div class="popup__container">
+            <div class="popup__content"></div>
+            <button class="popup__close"><img src="./images/order/popup-closing.png" alt="closing"></button>
+        </div>
+    </div>
+    <script type="text/template" id="auth">
+                <div>
+                    <img src="./images/order/popup-decoration.png" alt="Decoration branch">
+                    <p class="popup__text">Спасибо, ваша заявка принята. <br>
+                        Я свяжусь с вами в ближайшее время</p>
+                </div>
+            </script>
+    <script src="./popup.js"></script>
+</body>
+
+</html>
