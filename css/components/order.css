@@ -1,0 +1,234 @@
+h1 {
+    font: 400 64px/80px 'Playfair Display';
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.order {
+    padding-left: 5%;
+    width: 50%;
+}
+
+select {
+    border: 1px solid #000000;
+    width: 75px;
+    height: 35px;
+    font: 300 28px/38px 'Open Sans';
+    color: #A2A2A2;
+}
+
+::placeholder {
+    font: 300 28px/38px 'Open Sans';
+    color: #A2A2A2;
+}
+
+.order-title-with-closing {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-title-with-closing__close {
+    width: 19px;
+    height: 19px;
+}
+
+.order-information {
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    width: 98%;
+    border-bottom: 1.17978px solid #A1A1A1;
+    padding-bottom: 46px;
+}
+
+.order-information-name {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font: 400 28px/38px 'Open Sans';
+    color: #000000;
+}
+
+.order-information-name__accent {
+    font-weight: 400;
+}
+
+.order-information__cost {
+    font: 300 28px/38px 'Open Sans';
+    color: #000000;
+}
+
+.order-information__close {
+    width: 12px;
+    height: 13px;
+}
+
+.order-information-cost {
+    text-align: end;
+    font: 400 28px/38px 'Open Sans';
+    color: #010101;
+    margin-right: 2%;
+}
+
+.questionnaire {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.questionnaire__container {
+    border: none;
+    border-bottom: 1.17978px solid #000000;
+    width: 98%;
+    height: 50px;
+    font: 300 28px/38px 'Open Sans';
+    color: #010101;
+}
+
+.questionnaire__tel {
+    position: relative;
+    width: 93%;
+}
+
+.tel {
+    padding-left: 50px;
+}
+
+.static-value {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    font: 300 28px/38px 'Open Sans';
+    color: #010101;
+}
+
+.real-radio {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.order-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.order-description {
+    display: none;
+    margin-top: 30px;
+}
+
+.custom-radio {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-right: 40px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.custom-radio::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #000000;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.3s ease-in;
+    /* display: none; */
+}
+
+.real-radio:checked+.custom-radio::before {
+    /* display: inline-block; */
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-text {
+    font: 400 19px/26px 'Open Sans';
+    color: #010101;
+}
+
+.radio-text__accent {
+    font: 300 14px/19px 'Open Sans';
+    color: #A2A2A2;
+    margin-left: 30px;
+}
+
+.questionnaire__button {
+    font: 400 28px/38px 'Open Sans';
+    width: 428px;
+    height: 80px;
+    border: 1px solid #000000;
+    text-align: center;
+    color: #000000;
+    background: #A9A389;
+    text-decoration: none;
+    padding: 17px 85px 17px 85px;
+    display: inline-block;
+    background-color: rgba(169, 163, 137, 0.6);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.questionnaire__button:hover {
+    background-color: #a9a389;
+}
+
+.questionnaire__button:active {
+    background-color: #fff;
+    color: #a9a389;
+}
+
+.questionnaire__button:focus {
+    outline: none;
+}
+
+.questionnaire__button:before {
+    content: '';
+    z-index: -1;
+    background-color: rgba(169, 163, 137, 0.2);
+    border-radius: inherit;
+    transition: all .1s ease-in-out;
+}
+
+.questionnaire__button:hover:before {
+    transform: scaleX(1.1) scaleY(1.2);
+}
+
+.questionnaire__button:focus:before {
+    background-color: rgba(169, 163, 137, 0.4);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.questionnaire__button:after {
+    content: '';
+    z-index: -2;
+    border-radius: inherit;
+    animation: pulse 1s infinite;
+}
+
+.paying {
+    font: 300 19px/26px 'Open Sans';
+    color: #010101;
+    margin-top: 50px;
+}

@@ -1,0 +1,72 @@
+.menu_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__list {
+    display: flex;
+    list-style: none;
+    padding: auto;
+    margin: 0;
+    display: none;
+}
+
+.menu_open .hamburger::before {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+.menu_open .hamburger::after {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+.menu_open .hamburger__line {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.mobile_menu {
+    text-decoration: none;
+    color: #010101;
+}
+
+@media screen and (max-width: 950px) {
+    .menu_main {
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        padding: 10px 20px;
+        width: 10%;
+    }
+
+    .menu_main .menu__list {
+        display: none;
+        position: absolute;
+        margin-left: -50px;
+        top: 100px;
+        left: 50px;
+        flex-direction: column;
+        padding-top: 10px;
+        align-items: center;
+        justify-content:flex-start;
+        height: 250px;
+        width: 300%;
+        z-index: 1;
+        background: #F5F5F5;
+        box-shadow: 10px 10px 50px #010101;
+    }
+
+    .menu_main .menu__link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu_main.menu_open .menu__list {
+        display: flex;
+    }
+
+       
+}

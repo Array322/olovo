@@ -1,0 +1,70 @@
+.on-order-padding {
+    padding: 85px 4%;
+    text-align: center;
+}
+
+.on-order__title {
+    position: relative;
+    display: inline-block;
+    width: 790px;
+}
+
+.on-order__title-left-image {
+    position: absolute;
+    top: -100px;
+    left: -40px;
+}
+
+.on-order__title-right-image {
+    position: absolute;
+    top: -100px;
+    left: 450px;
+}
+
+.on-order-description {
+    display: inline-block;
+    width: 790px;
+    font: 300 28px/38px 'Open Sans';
+    text-align: center;
+    color: #000000;
+}
+
+.on-order-border {
+    display: block;
+    width: 252px;
+    border: 1px solid #000000;
+    margin: auto;
+}
+
+.order-contacts {
+    margin-top: 125px;
+    display: flex;
+    gap: 180px;
+    justify-content: center;
+}
+
+.contact-title {
+    font: 400 28px/38px 'Open Sans';
+    text-align: left;
+    color: #000000;
+    margin-bottom: 9px;
+}
+
+.radio-order-text {
+    font: 300 28px/38px 'Open Sans';
+    color: #000000;
+    text-align: left;
+    margin-left: -20px;
+}
+
+.on-order-radio {
+    text-align: left;
+    position: relative;
+}
+
+.on-order-radio__image {
+    position: absolute;
+    top: 300px;
+    right: -300px;
+    z-index: -1;
+}
